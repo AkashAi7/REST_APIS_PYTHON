@@ -1,5 +1,25 @@
 #program for the flask main file 
 
+# Response code information
+# 200 OK
+# 201 Created
+# 202 Accepted
+# 204 No Content
+# 400 Bad Request
+# 401 Unauthorized
+# 403 Forbidden
+# 404 Not Found
+# 405 Method Not Allowed
+# 409 Conflict
+# 500 Internal Server Error
+# 501 Not Implemented
+# 502 Bad Gateway
+# 503 Service Unavailable
+# 504 Gateway Timeout
+# 505 HTTP Version Not Supported
+# 507 Insufficient Storage
+# 511 Network Authentication Required
+
 
 # GET retrieve data 
 # POST submit new data
@@ -150,6 +170,19 @@ def update_patch_order(orderid):
         return response
     order[orderid]=req
     response=make_response(jsonify({"success":"New order added"}),201)
+    return response
+
+
+# Delete method for deleting the data
+# Orderid is taken as an id and the data is deleted from the collection
+
+@app1.route("/orders/<orderid>",methods=['DELETE'])
+def delete_order(orderid):
+    if orderid in order:
+        del order[orderid]
+        response=make_response(jsonify({"message":"order deleted"}),200)
+        return response
+    response=make_response(jsonify({"error":"order not found"}),404)
     return response
 
 
