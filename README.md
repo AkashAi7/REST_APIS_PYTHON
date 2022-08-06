@@ -1,6 +1,6 @@
 # REST_APIS_PYTHON
 
-# ABOUT
+## ABOUT
 This project is a simple compilation of the API making using the flask . This project covers the basic HTTP responses of GET , PUT , PATCH , DELETE. 
 The API_FLASK_SQL.py file covers the HTTP requests along with the RDBMS database 
 we have used SQL for the purpose of the database.
@@ -9,7 +9,7 @@ The project uses the example of the pizza ordering system for mimicing the CRUD 
 from json to SQL structure. 
 
 
-# RESPONSE CODE 
+## RESPONSE CODE DESCRIPTION  
 200 OK
 201 Created
 202 Accepted
